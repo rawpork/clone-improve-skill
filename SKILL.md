@@ -18,6 +18,25 @@ Adapted from the Replica Skill (Jake Schincariol, MIT, github.com/Jakeschincario
 - Nothing public without Ken's approval of the exact words and the exact result.
 - "Clone any app" means the features and the flow — not the content, the network, or the licences the app owns. You can rebuild a music app's player. You cannot clone its catalogue.
 
+## Empty-folder start (run this first, every time)
+
+Trigger: Ken launches Claude in a new, empty folder and types `clone <app>: <slice>` (also "improve <app>", "make my own <app>", "new clone"). Optional: `for <who>`, `stack <x>`.
+
+Do these steps in order:
+1. Check the folder. If it holds another project's files (a package.json, a CLAUDE.md that is not ours, a .git with history), stop and tell Ken. Never set up inside Titain MASTER.
+2. If either part of the line is missing, ask Ken for it. One question: the app name, and the slice (one part of the app, not all of it).
+3. Run `git init`. Make the `replica/` folder.
+4. Write a short `CLAUDE.md` with these rules, in STE100 plain words:
+   - Rebuild features and flows only. Never copy code, logo, copy, content or brand.
+   - Never scrape behind a login or a paywall. Use public pages and Ken's own account.
+   - No fake reviews. Reviews are research, not testimonials.
+   - The brand never uses the original's name.
+   - Ken approves exact words and result before anything goes live.
+   - Free tier first. Default stack: Next.js, Supabase, Cloudflare, Tailwind.
+5. Write `replica/brief.md`: target, slice, who it is for, stack, what Ken wants. This is Gate 1. Show it to Ken. Wait for his yes.
+6. After the yes, run the entrepreneur stage first. Stop at its angle. Ken approves the angle before recon.
+7. Keep state in `replica/`. A new session reads `replica/brief.md` and resumes.
+
 ## The pipeline — eleven stages, in order
 
 Each stage reads what the last one wrote, in a `replica/` folder in the project. Run them in order. Any one can also run alone.
